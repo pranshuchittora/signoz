@@ -18,8 +18,9 @@
 		"isolatedModules": true,
 		"noEmit": true,
 		"baseUrl": "./src",
-		"downlevelIteration": true
+		"downlevelIteration": true,
+		"types": ["jest", "node"]
 	},
-	"exclude": ["node_modules"],
+	"exclude": ["node_modules", "cypress"],
 	"include": ["./src"]
 }

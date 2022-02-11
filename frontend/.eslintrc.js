@@ -3,6 +3,7 @@ module.exports = {
 		browser: true,
 		es2021: true,
 		node: true,
+		'jest/globals': true,
 	},
 	extends: [
 		'eslint:recommended',
@@ -25,6 +26,7 @@ module.exports = {
 		'simple-import-sort',
 		'react-hooks',
 		'prettier',
+		'jest',
 	],
 	settings: {
 		react: {
@@ -42,7 +44,10 @@ module.exports = {
 		'@typescript-eslint/explicit-function-return-type': 'error',
 		'@typescript-eslint/no-var-requires': 0,
 		'react/no-array-index-key': 2,
-		'linebreak-style': ['error', process.platform === 'win32' ? 'windows' : 'unix'],
+		'linebreak-style': [
+			'error',
+			process.platform === 'win32' ? 'windows' : 'unix',
+		],
 
 		// simple sort error
 		'simple-import-sort/imports': 'error',

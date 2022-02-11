@@ -16,7 +16,7 @@ const config: Config.InitialOptions = {
 		'\\.(js|jsx|ts|tsx)?$': 'babel-jest',
 	},
 	setupFilesAfterEnv: ['<rootDir>jest.setup.ts'],
-	testPathIgnorePatterns: ['/node_modules/', '/public/'],
+	testPathIgnorePatterns: ['/node_modules/', '/public/', '/cypress/'],
 	moduleDirectories: ['node_modules', 'src'],
 };
 
