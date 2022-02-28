@@ -8,18 +8,24 @@ import { useSelector } from 'react-redux';
 import { Redirect, Route, Router, Switch } from 'react-router-dom';
 import { AppState } from 'store/reducers';
 import AppReducer from 'types/reducer/app';
-
+import AnimatedLoader from 'components/AnimatedLoader';
 import routes from './routes';
 
 
 const App = (): JSX.Element => {
 	const { isLoggedIn } = useSelector<AppState, AppReducer>((state) => state.app);
+	const [hideLoader, setHideLoader] = React.useState(false);
 
+	React.useEffect(() => {
+		setTimeout(() => {
+			setHideLoader(true)
+		}, 6000)
+	}, [])
 	return (
 		<Router history={history}>
 			<AppLayout>
-				<Suspense fallback={<Spinner size="large" tip="Loading..." />}>
-					<Switch>
+				<Suspense fallback={<AnimatedLoader />}>
+					{!hideLoader ? <div style={{ display: 'flex', flex: 1, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', height: '100%' }}> <AnimatedLoader /> </div> : <Switch>
 						{routes.map(({ path, component, exact }, index) => (
 							<Route key={index} exact={exact} path={path} component={component} />
 						))}
@@ -35,7 +41,8 @@ const App = (): JSX.Element => {
 							}
 						/>
 						<Route path="*" component={NotFound} />
-					</Switch>
+					</Switch>}
+
 				</Suspense>
 			</AppLayout>
 		</Router>

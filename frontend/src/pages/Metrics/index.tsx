@@ -50,7 +50,7 @@ const Metrics = ({ getService }: MetricsProps): JSX.Element => {
 	}, [getService, isSkipped, loading, maxTime, minTime, services, selectedTime]);
 
 	if (loading) {
-		return <Spinner tip="Loading..." />;
+		return<AnimatedLoader />;
 	}
 
 	return <MetricTable />;

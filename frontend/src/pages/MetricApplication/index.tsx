@@ -45,7 +45,7 @@ const MetricsApplication = ({
 	}, [servicename, getInitialData, resetInitialData, maxTime, minTime]);
 
 	if (metricsApplicationLoading) {
-		return <Spinner tip="Loading..." />;
+		return<AnimatedLoader />;
 	}
 
 	if (error) {

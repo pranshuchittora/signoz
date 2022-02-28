@@ -4,7 +4,6 @@ function Loadable(importPath: {
 	(): LoadableProps;
 }): React.LazyExoticComponent<LazyComponent> {
 	const LazyComponent = lazy(() => importPath());
-
 	return LazyComponent;
 }
 

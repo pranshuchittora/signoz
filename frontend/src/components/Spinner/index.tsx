@@ -1,12 +1,12 @@
 import { LoadingOutlined } from '@ant-design/icons';
 import { Spin, SpinProps } from 'antd';
 import React from 'react';
-
+import AnimatedLoader from 'components/AnimatedLoader';
 import { SpinerStyle } from './styles';
 
 const Spinner = ({ size, tip, height }: SpinnerProps): JSX.Element => (
 	<SpinerStyle height={height}>
-		<Spin spinning size={size} tip={tip} indicator={<LoadingOutlined spin />} />
+		<AnimatedLoader />
 	</SpinerStyle>
 );
 
