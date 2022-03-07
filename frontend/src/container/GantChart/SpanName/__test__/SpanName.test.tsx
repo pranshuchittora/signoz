@@ -1,7 +1,9 @@
-import SpanName from '../index';
+import '@testing-library/jest-dom';
+
 import { render } from '@testing-library/react';
 import React from 'react';
-import { expect } from '@jest/globals';
+
+import SpanName from '../index';
 
 describe('Span Name', () => {
 	it('render Span Name', async () => {
