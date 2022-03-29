@@ -36,15 +36,18 @@ function ListOfAllDashboard(): JSX.Element {
 			title: 'Name',
 			dataIndex: 'name',
 			render: Name,
+			width: '25%',
 		},
 		{
 			title: 'Description',
 			dataIndex: 'description',
+			width: '20%',
 		},
 		{
-			title: 'Tags (can be multiple)',
+			title: 'Tags',
 			dataIndex: 'tags',
 			render: Tags,
+			width: '10%',
 		},
 		{
 			title: 'Created At',
@@ -56,6 +59,7 @@ function ListOfAllDashboard(): JSX.Element {
 				return prev - next;
 			},
 			render: Createdby,
+			width: '10%',
 		},
 		{
 			title: 'Last Updated Time',
@@ -67,12 +71,14 @@ function ListOfAllDashboard(): JSX.Element {
 				return prev - next;
 			},
 			render: DateComponent,
+			width: '10%',
 		},
 		{
 			title: 'Action',
 			dataIndex: '',
 			key: 'x',
 			render: DeleteButton,
+			width: '10%',
 		},
 	];
 
