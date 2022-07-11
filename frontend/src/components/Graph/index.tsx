@@ -22,6 +22,7 @@ import {
 	Tooltip,
 } from 'chart.js';
 import * as chartjsAdapter from 'chartjs-adapter-date-fns';
+import annotationPlugin from 'chartjs-plugin-annotation';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from 'store/reducers';
@@ -50,6 +51,7 @@ Chart.register(
 	SubTitle,
 	BarController,
 	BarElement,
+	annotationPlugin,
 );
 
 function Graph({
@@ -118,6 +120,17 @@ function Graph({
 									label += getToolTipValue(context.parsed.y.toString(), yAxisUnit);
 								}
 								return label;
+							},
+						},
+					},
+					annotation: {
+						annotations: {
+							line1: {
+								type: 'line',
+								yMin: 10,
+								yMax: 10,
+								borderColor: 'rgb(255, 99, 132)',
+								borderWidth: 2,
 							},
 						},
 					},
